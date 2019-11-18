@@ -1,0 +1,16 @@
+<div id='edit_header'>
+  <h1 class='mb-0'><%= @task.title %></h1>
+  <%= link_to "Edit task", edit_task_path, class: 'btn btn-outline-info' %>
+</div>
+
+<p><%= @task.details %></p>
+
+<div class='d-flex flex-column justify-between'>
+<%= link_to task_path(@task), method: :delete, data: { confirm: "Are you sure?" } do %>
+  <i class="fas fa-trash-alt"></i> Delete task
+<% end %>
+
+<%= link_to tasks_path do %>
+  <i class="fas fa-undo-alt"></i> Back to list
+<% end %>
+</div>
